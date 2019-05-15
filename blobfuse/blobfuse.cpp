@@ -323,6 +323,12 @@ int read_and_set_arguments(int argc, char *argv[], struct fuse_args *args)
       if (string_args[i].find("allow_other") != std::string::npos) {
           default_permission = 0777; 
       }
+
+    //add by eagle for JYGW
+      if (string_args[i].find("allow_other_lite_STU") != std::string::npos) {
+          default_permission = 0755; 
+      }
+      //add end
     }
 
     int ret = 0;
