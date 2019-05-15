@@ -318,21 +318,24 @@ int read_and_set_arguments(int argc, char *argv[], struct fuse_args *args)
 
     // Check for existence of allow_other flag and change the default permissions based on that
     //modify by eagle for JYGW
-    //default_permission = 0770;
-    default_permission = 0755;
+    default_permission = 0770;
+    //default_permission = 0755;
     std::vector<std::string> string_args(argv, argv+argc);
+
+    //add by eagle for JYG
     for (size_t i = 1; i < string_args.size(); ++i) {
-      //add by eagle for JYGW
       if (string_args[i].find("allow_stu") != std::string::npos) {
           default_permission = 0755; 
       }
-      //add end
-      if (string_args[i].find("allow_other") != std::string::npos) {
-          default_permission = 0777; 
-      }
+    } 
+    //add end
 
- 
+    for (size_t i = 1; i < string_args.size(); ++i) {
+     if (string_args[i].find("allow_other") != std::string::npos) {
+          default_permission = 0777; 
+      } 
     }
+
 
     int ret = 0;
     try
