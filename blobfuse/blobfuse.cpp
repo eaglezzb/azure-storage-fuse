@@ -320,15 +320,16 @@ int read_and_set_arguments(int argc, char *argv[], struct fuse_args *args)
     default_permission = 0770;
     std::vector<std::string> string_args(argv, argv+argc);
     for (size_t i = 1; i < string_args.size(); ++i) {
-      if (string_args[i].find("allow_other") != std::string::npos) {
-          default_permission = 0777; 
-      }
-
-    //add by eagle for JYGW
+      //add by eagle for JYGW
       if (string_args[i].find("allow_other_lite_STU") != std::string::npos) {
           default_permission = 0755; 
       }
       //add end
+      if (string_args[i].find("allow_other") != std::string::npos) {
+          default_permission = 0777; 
+      }
+
+ 
     }
 
     int ret = 0;
