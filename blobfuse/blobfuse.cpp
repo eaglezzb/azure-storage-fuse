@@ -317,7 +317,9 @@ int read_and_set_arguments(int argc, char *argv[], struct fuse_args *args)
     *args = FUSE_ARGS_INIT(argc, argv);
 
     // Check for existence of allow_other flag and change the default permissions based on that
-    default_permission = 0770;
+    //modify by eagle for JYGW
+    //default_permission = 0770;
+    default_permission = 0755;
     std::vector<std::string> string_args(argv, argv+argc);
     for (size_t i = 1; i < string_args.size(); ++i) {
       //add by eagle for JYGW
