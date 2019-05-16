@@ -2,8 +2,10 @@
 ## About
 
 #this is custumer branch
+
 #change feature
-./blobfuse ~/mycontainer --tmp-path=/mnt/blobfusetmp -o allow_other --config-file=/home/aksadmin/fuse_connection.cfg
+
+./blobfuse ~/mycontainer --tmp-path=/mnt/blobfusetmp -o allow_other --config-file=/home/<username>/fuse_connection.cfg
 
 -o allow_other  this operation  set 755 for file and folder permission.
 
