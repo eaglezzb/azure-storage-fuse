@@ -1,6 +1,14 @@
 # blobfuse
 ## About
 
+#this is custumer branch
+#change feature
+./blobfuse ~/mycontainer --tmp-path=/mnt/blobfusetmp -o allow_other --config-file=/home/aksadmin/fuse_connection.cfg
+
+-o allow_other  this operation  set 755 for file and folder permission.
+
+
+#======================================================================
 blobfuse is an open source project developed to provide a virtual filesystem backed by the Azure Blob storage. It uses the [libfuse](https://github.com/libfuse/libfuse) open source library to communicate with the Linux FUSE kernel module, and implements the filesystem operations using the Azure Storage Blob REST APIs.
 
 Blobfuse is stable, and is supported by Azure Storage given that it is used within its limits documented here. Please submit an issue [here](https://github.com/azure/azure-storage-fuse/issues) for any issues/requests/questions.
